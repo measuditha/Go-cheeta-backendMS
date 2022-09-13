@@ -26,13 +26,13 @@ public class SwaggerConfig {
     }
     private ApiInfo metaData() {
         ApiInfo apiInfo = new ApiInfo(
-                "Sample Car Booking App",
-                "REST API for Car Booking",
+                "Go Cheeta",
+                "REST API for Go Cheeta",
                 "1.0",
                 "Terms of service",
-                new Contact("Harry Potter", "http://samplecarbooking.com/about/", "harry@scb.com"),
+                new Contact("Uditha Adhikary", "http://gocheeta.com/about/", "chathurangaadhikary@gmail.com"),
                "Test License 2.0",
-                "http://www.testlicense.com/licenses/TEST-LICENSE-2.0");
+                "http://www.gocheeta.com/licenses/TEST-LICENSE-2.0");
         return apiInfo;
     }
 }
