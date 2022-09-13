@@ -13,8 +13,8 @@ public class BookingDto {
     private long bookingId;
 
     @UniqueElements
-    @NotEmpty(message = "dealer id can not be null")
-    private String dealerId;
+    @NotEmpty(message = "driver id can not be null")
+    private String driverId;
 
     @UniqueElements
     @NotEmpty(message = "customer id can not be null")
@@ -38,12 +38,12 @@ public class BookingDto {
         this.bookingId = bookingId;
     }
 
-    public String getDealerId() {
-        return dealerId;
+    public String getDriverId() {
+        return driverId;
     }
 
-    public void setDealerId(String dealerId) {
-        this.dealerId = dealerId;
+    public void setDriverId(String driverId) {
+        this.driverId = driverId;
     }
 
     public String getCustomerId() {

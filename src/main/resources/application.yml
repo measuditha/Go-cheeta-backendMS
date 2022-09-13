@@ -1,10 +1,10 @@
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/gocheeta
-    password: root1234
+    password: DSa0717614816
     username: root
     driver-class-name: "com.mysql.jdbc.Driver"
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     hibernate:
-      ddl-auto: none
+      ddl-auto: update

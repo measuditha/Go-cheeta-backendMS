@@ -16,7 +16,9 @@ public class Location {
     private String country;
     private String pinCode;
     private String customerId;
-    private String dealerId;
+
+    private String driverId;
+
     private String carRegistrationNo;
 
     public Long getId() {
@@ -75,12 +77,12 @@ public class Location {
         this.customerId = customerId;
     }
 
-    public String getDealerId() {
-        return dealerId;
+    public String getDriverId() {
+        return driverId;
     }
 
-    public void setDealerId(String dealerId) {
-        this.dealerId = dealerId;
+    public void setDriverId(String driverId) {
+        this.driverId = driverId;
     }
 
     public String getCarRegistrationNo() {

@@ -11,8 +11,8 @@ import com.carbooking.model.LocationDto;
 import com.carbooking.model.RegisterDto;
 import com.carbooking.repo.Customer;
 import com.carbooking.repo.CustomerRepository;
-import com.carbooking.repo.Dealer;
-import com.carbooking.repo.DealerRepository;
+import com.carbooking.repo.Driver;
+import com.carbooking.repo.DriverRepository;
 import com.carbooking.repo.Location;
 import com.carbooking.repo.LocationRepository;
 import com.carbooking.repo.Register;
@@ -28,7 +28,7 @@ public class RegisterService {
     private CustomerRepository customerRepository;
 
     @Autowired
-    private DealerRepository dealerRepository;
+    private DriverRepository driverRepository;
 
     @Autowired
     private LocationRepository locationRepository;
@@ -38,7 +38,7 @@ public class RegisterService {
     	System.out.println("dto" + dto);
         Register register = getRegister(dto);
         Customer customer = getCustomer(dto);
-        Dealer dealer = getDealer(dto);
+        Driver driver = getDriver(dto);
 
         Register registerResponse = registerRepository.save(register);
         if(customer != null) {
@@ -47,12 +47,12 @@ public class RegisterService {
             //Location location = getCustomerLocation(dto);
             //locationRepository.save(location);
         }
-        if(dealer != null) {
+        if(driver != null) {
         	System.out.println("deealer......" );
-            dealerRepository.save(dealer);
+            driverRepository.save(driver);
 			/*
 			 * List<Location> locations =
-			 * getDealerLocations(dto.getDealerDto().getOutletLocationDto()); for (Location
+			 * getDriverLocations(dto.getDriverDto().getOutletLocationDto()); for (Location
 			 * location: locations) { locationRepository.save(location); }
 			 */
         }
@@ -60,23 +60,23 @@ public class RegisterService {
         
     }
 
-    private Dealer getDealer(RegisterDto dto) {
-    	if(dto.getDealerDto().getName() == null) {
+    private Driver getDriver(RegisterDto dto) {
+    	if(dto.getDriverDto().getName() == null) {
     		return  null;
     	}
-        if(dto.getDealerDto() != null) {
-            Dealer dealer = new Dealer();
-            dealer.setContactNo(dto.getDealerDto().getContactNo());
-            dealer.setDealerId(dto.getDealerDto().getDealerId());
-            dealer.setEmailAddress(dto.getDealerDto().getEmailAddress());
-            dealer.setName(dto.getDealerDto().getName());
-            //dealer.setOutletAddress(getDealerLocations(dto.getDealerDto().getOutletLocationDto()));
-            return dealer;
+        if(dto.getDriverDto() != null) {
+            Driver driver = new Driver();
+            driver.setContactNo(dto.getDriverDto().getContactNo());
+            driver.setDriverId(dto.getDriverDto().getDriverId());
+            driver.setEmailAddress(dto.getDriverDto().getEmailAddress());
+            driver.setName(dto.getDriverDto().getName());
+            //driver.setOutletAddress(getDriverLocations(dto.getDriverDto().getOutletLocationDto()));
+            return driver;
         }
         return null;
     }
 
-    private List<Location> getDealerLocations(List<LocationDto> outletLocationDto) {
+    private List<Location> getDriverLocations(List<LocationDto> outletLocationDto) {
         List<Location> locations = new ArrayList<>();
         for (LocationDto locationDto: outletLocationDto) {
             Location location = getLocation(locationDto);
@@ -115,8 +115,8 @@ public class RegisterService {
         location.setCountry(locationDto.getCountry());
         if(locationDto.getCustomerId() != null)
             location.setCustomerId(locationDto.getCustomerId());
-        if(locationDto.getDealerId() != null)
-            location.setDealerId(locationDto.getDealerId());
+        if(locationDto.getDriverId() != null)
+            location.setDriverId(locationDto.getDriverId());
         return location;
     }
 

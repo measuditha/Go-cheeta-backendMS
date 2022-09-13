@@ -22,7 +22,7 @@ public class CarDto {
     private Long locationId;
 
     @NotNull
-    private String dealerId;
+    private String driverId;
     private boolean availability;
 
     public Long getLocationId() {
@@ -65,12 +65,12 @@ public class CarDto {
         this.price = price;
     }
 
-    public String getDealerId() {
-        return dealerId;
+    public String getDriverId() {
+        return driverId;
     }
 
-    public void setDealerId(String dealerId) {
-        this.dealerId = dealerId;
+    public void setDriverId(String driverId) {
+        this.driverId = driverId;
     }
 
     public boolean isAvailability() {

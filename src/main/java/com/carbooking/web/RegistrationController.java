@@ -102,15 +102,15 @@ public class RegistrationController {
 
 		if(dto.getCustomerDto() == null ) {
 
-			if(dto.getDealerDto() == null) {
+			if(dto.getDriverDto() == null) {
 
-				errorMsg = "Dealer details must not be empty";
+				errorMsg = "Driver details must not be empty";
 
 			}
 
 		}
 
-		if(dto.getDealerDto() == null ) {
+		if(dto.getDriverDto() == null ) {
 
 			if(dto.getCustomerDto() == null) {
 

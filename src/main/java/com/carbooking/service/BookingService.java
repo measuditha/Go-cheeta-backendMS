@@ -24,16 +24,16 @@ public class BookingService {
     	return bookingRepository.findAllByCustomerId(custId);
     }
 
-    public List<Booking> getDealerBooking(String dealerId) {
+    public List<Booking> getDriverBooking(String driverId) {
     	
-    	return bookingRepository.findAllByDealerId(dealerId);
+    	return bookingRepository.findAllByDriverId(driverId);
     }
 
     public Booking getBooking(BookingDto bookingDto){
         Booking booking = new Booking();
         booking.setCarId(bookingDto.getCarId());
         booking.setCustomerId(bookingDto.getCustomerId());
-        booking.setDealerId(bookingDto.getDealerId());
+        booking.setDriverId(bookingDto.getDriverId());
         booking.setStartDate(bookingDto.getStartDate());
         booking.setEndDate(bookingDto.getEndDate());
 

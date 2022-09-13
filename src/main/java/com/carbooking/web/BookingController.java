@@ -31,9 +31,9 @@ public class BookingController {
     	return bookingService.getCustomerBooking(custId);
     }
 
-    @GetMapping(value="/dealer/{dealerId}")
-    public List<Booking> getDealerBooking(@PathVariable String dealerId) {
-    	return bookingService.getDealerBooking(dealerId);
+    @GetMapping(value="/diver/{driverId}")
+    public List<Booking> getDriverBooking(@PathVariable String driverId) {
+    	return bookingService.getDriverBooking(driverId);
     }
 }
 

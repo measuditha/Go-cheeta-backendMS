@@ -7,20 +7,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Dealer {
-
+public class Driver {
     @Id
-    private String dealerId;
+    private String driverId;
     private String name;
     private String contactNo;
     private String emailAddress;
 
-    public String getDealerId() {
-        return dealerId;
+    public String getDriverId() {
+        return driverId;
     }
 
-    public void setDealerId(String dealerId) {
-        this.dealerId = dealerId;
+    public void setDriverId(String driverId) {
+        this.driverId = driverId;
     }
 
     public String getName() {
@@ -46,5 +45,4 @@ public class Dealer {
     public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
     }
-
 }

@@ -12,7 +12,7 @@ public interface CarRepository extends CrudRepository<Car, String> {
 
     List<Car> findByBrandAndLocationId(String carBrand, Long locationId);
 
-	List<Car> findByDealerId(String dealerId);
+	List<Car> findByDriverId(String driverId);
 
 	void deleteByRegistrationNo(String registrationNo);
 }

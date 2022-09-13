@@ -6,11 +6,10 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import java.util.List;
 
-public class DealerDto {
-
+public class DriverDto {
     @UniqueElements
-    @NotEmpty(message = "dealer id must not be empty")
-    private String dealerId;
+    @NotEmpty(message = "driver id must not be empty")
+    private String driverId;
 
     @NotEmpty(message = "first name must not be empty")
     private String name;
@@ -32,12 +31,12 @@ public class DealerDto {
         this.outletLocationDto = outletLocationDto;
     }
 
-    public String getDealerId() {
-        return dealerId;
+    public String getDriverId() {
+        return driverId;
     }
 
-    public void setDealerId(String dealerId) {
-        this.dealerId = dealerId;
+    public void setDriverId(String driverId) {
+        this.driverId = driverId;
     }
 
     public String getName() {
@@ -63,6 +62,4 @@ public class DealerDto {
     public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
     }
-
-
 }

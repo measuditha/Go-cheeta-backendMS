@@ -11,7 +11,7 @@ public class Car {
     private String registrationNo;
     private String brand;
     private Double price;
-    private String dealerId;
+    private String driverId;
     private boolean availability;
     private Long locationId;
 
@@ -55,12 +55,12 @@ public class Car {
         this.price = price;
     }
 
-    public String getDealerId() {
-        return dealerId;
+    public String getDriverId() {
+        return driverId;
     }
 
-    public void setDealerId(String dealerId) {
-        this.dealerId = dealerId;
+    public void setDriverId(String driverId) {
+        this.driverId = driverId;
     }
 
     public boolean isAvailability() {

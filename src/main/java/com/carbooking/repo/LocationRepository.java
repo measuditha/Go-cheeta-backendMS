@@ -7,5 +7,5 @@ import java.util.List;
 
 @Repository
 public interface LocationRepository extends CrudRepository<Location, Long> {
-    List<Location> findAllByDealerId(String dealerId);
+    List<Location> findAllByDriverId(String driverId);
 }

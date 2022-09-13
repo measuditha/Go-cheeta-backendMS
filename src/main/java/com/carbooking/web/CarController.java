@@ -35,9 +35,9 @@ public class CarController {
 		return carService.getCar(registrationNo);
 	}
 
-	@GetMapping(value = "/dealer/{dealerId}")
-	public List<Car> getAllCarByDealerId(@PathVariable String dealerId) {
-		return carService.getAllCarByDealerId(dealerId);
+	@GetMapping(value = "/driver/{driverId}")
+	public List<Car> getAllCarByDriverId(@PathVariable String driverId) {
+		return carService.getAllCarByDriverId(driverId);
 	}
 
 	@GetMapping

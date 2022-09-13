@@ -23,9 +23,9 @@ public class LocationController {
         return locationService.getAllLocations();
     }
 
-    @GetMapping(value = "/{dealerId}")
-    public List<Location> getLocation(@PathVariable String dealerId){
-        return locationService.getLocationsByDealerId(dealerId);
+    @GetMapping(value = "/{driverId}")
+    public List<Location> getLocation(@PathVariable String driverId){
+        return locationService.getLocationsByDriverId(driverId);
     }
     
     

@@ -26,9 +26,9 @@ public class LocationDto {
     @UniqueElements
     private String customerId;
 
-    @NotEmpty(message = "dealer id can not be null")
+    @NotEmpty(message = "driver id can not be null")
     @UniqueElements
-    private String dealerId;
+    private String driverId;
 
     @NotEmpty(message = "car id can not be null")
     @UniqueElements
@@ -58,12 +58,13 @@ public class LocationDto {
         this.customerId = customerId;
     }
 
-    public String getDealerId() {
-        return dealerId;
+    public String getDriverId() {
+        return driverId;
     }
 
-    public void setDealerId(String dealerId) {
-        this.dealerId = dealerId;
+
+    public void setDriverId(String driverId) {
+        this.driverId = driverId;
     }
 
     public String getStreet() {

@@ -19,7 +19,7 @@ public class LocationService {
         return (List<Location>) locationRepository.findAll();
     }
 
-    public List<Location> getLocationsByDealerId(String dealerId) {
-        return locationRepository.findAllByDealerId(dealerId);
+    public List<Location> getLocationsByDriverId(String driverId) {
+        return locationRepository.findAllByDriverId(driverId);
     }
 }

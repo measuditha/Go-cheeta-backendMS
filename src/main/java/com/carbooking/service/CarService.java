@@ -26,7 +26,7 @@ public class CarService {
         Car car = new Car();
         car.setAvailability(carDto.isAvailability());
         car.setBrand(carDto.getBrand());
-        car.setDealerId(carDto.getDealerId());
+        car.setDriverId(carDto.getDriverId());
         car.setModel(carDto.getModel());
         car.setPrice(carDto.getPrice());
         car.setRegistrationNo(carDto.getRegistrationNo());
@@ -40,7 +40,7 @@ public class CarService {
         Car car = new Car();
         car.setAvailability(carDto.isAvailability());
         car.setBrand(carDto.getBrand());
-        car.setDealerId(carDto.getDealerId());
+        car.setDriverId(carDto.getDriverId());
         car.setModel(carDto.getModel());
         car.setPrice(carDto.getPrice());
         car.setRegistrationNo(carDto.getRegistrationNo());
@@ -69,8 +69,8 @@ public class CarService {
     }
 
 
-	public List<Car> getAllCarByDealerId(String dealerId) {
-		return carRepository.findByDealerId(dealerId);
+	public List<Car> getAllCarByDriverId(String driverId) {
+		return carRepository.findByDriverId(driverId);
 	}
 
 

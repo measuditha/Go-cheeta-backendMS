@@ -16,7 +16,7 @@ public class RegisterDto {
 
     private CustomerDto customerDto;
 
-    private DealerDto dealerDto;
+    private DriverDto driverDto;
 
     private String userType;
 
@@ -52,17 +52,17 @@ public class RegisterDto {
 
 
 
-    public DealerDto getDealerDto() {
+    public DriverDto getDriverDto() {
 
-        return dealerDto;
+        return driverDto;
 
     }
 
 
 
-    public void setDealerDto(DealerDto dealerDto) {
+    public void setDriverDto(DriverDto driverDto) {
 
-        this.dealerDto = dealerDto;
+        this.driverDto = driverDto;
 
     }
 

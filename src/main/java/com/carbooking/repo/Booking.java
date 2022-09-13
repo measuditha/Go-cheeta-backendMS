@@ -11,7 +11,7 @@ public class Booking {
     @Id
     @GeneratedValue
     private long bookingId;
-    private String dealerId;
+    private String driverId;
     private String customerId;
     private String carId;
     private Date startDate;
@@ -25,12 +25,11 @@ public class Booking {
         this.bookingId = bookingId;
     }
 
-    public String getDealerId() {
-        return dealerId;
+    public String getDriverId() {
+        return driverId;
     }
-
-    public void setDealerId(String dealerId) {
-        this.dealerId = dealerId;
+    public void setDriverId(String driverId) {
+        this.driverId = driverId;
     }
 
     public String getCustomerId() {
