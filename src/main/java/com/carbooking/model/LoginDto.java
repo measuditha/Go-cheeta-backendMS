@@ -9,6 +9,9 @@ public class LoginDto {
     @UniqueElements
     @NotEmpty(message = "username can not be null")
     private String username;
+
+    @UniqueElements
+    @NotEmpty(message = "password can not be null")
     private String password;
     private String userType;
 

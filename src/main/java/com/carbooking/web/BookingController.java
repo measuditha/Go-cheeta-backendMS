@@ -28,10 +28,6 @@ public class BookingController {
     public List<Booking> getCustomerBooking(@PathVariable String custId) {
     	return bookingService.getCustomerBooking(custId);
     }
-    @GetMapping(value="/customer/{custId}")
-    public List<Booking> getCustomerBookingtoadmin(@PathVariable String custId) {
-        return bookingService.getCustomerBooking(custId);
-    }
     @GetMapping(value="/diver/{driverId}")
     public List<Booking> getDriverBooking(@PathVariable String driverId) {
     	return bookingService.getDriverBooking(driverId);

@@ -31,24 +31,16 @@ public class RegisterService {
     	System.out.println("dto" + dto);
         Register register = getRegister(dto);
         Customer customer = getCustomer(dto);
-        Admin admin = getAdmin(dto);
         Driver driver = getDriver(dto);
 
         Register registerResponse = registerRepository.save(register);
         if(customer != null) {
         	System.out.println("customer......" );
             customerRepository.save(customer);
-            //Location location = getCustomerLocation(dto);
-            //locationRepository.save(location);
         }
         if(driver != null) {
         	System.out.println("deealer......" );
             driverRepository.save(driver);
-			/*
-			 * List<Location> locations =
-			 * getDriverLocations(dto.getDriverDto().getOutletLocationDto()); for (Location
-			 * location: locations) { locationRepository.save(location); }
-			 */
         }
         return registerResponse;
         
@@ -64,28 +56,10 @@ public class RegisterService {
             driver.setDriverId(dto.getDriverDto().getDriverId());
             driver.setEmailAddress(dto.getDriverDto().getEmailAddress());
             driver.setName(dto.getDriverDto().getName());
-            //driver.setOutletAddress(getDriverLocations(dto.getDriverDto().getOutletLocationDto()));
             return driver;
         }
         return null;
     }
-
-    private Admin getAdmin(RegisterDto dto) {
-        if(dto.getAdminDto().getName() == null) {
-            return  null;
-        }
-        if(dto.getAdminDto() != null) {
-            Admin admin = new Admin();
-            admin.setContactNo(dto.getAdminDto().getContactNo());
-            admin.setAdminId(dto.getAdminDto().getAdminId());
-            admin.setEmailAddress(dto.getAdminDto().getEmailAddress());
-            admin.setName(dto.getAdminDto().getName());
-            //admin.setOutletAddress(getAdminLocations(dto.getAdminDto().getOutletLocationDto()));
-            return admin;
-        }
-        return null;
-    }
-
     private List<Location> getDriverLocations(List<LocationDto> outletLocationDto) {
         List<Location> locations = new ArrayList<>();
         for (LocationDto locationDto: outletLocationDto) {
