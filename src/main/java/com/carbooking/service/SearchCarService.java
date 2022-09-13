@@ -11,10 +11,8 @@ import java.util.List;
 
 @Service
 public class SearchCarService {
-
     @Autowired
     private CarRepository carRepository;
-
     public List<Car> getSearchedCars(SearchCarDto searchCarDto) {
         return carRepository.findByBrandAndLocationId(searchCarDto.getCarBrand(), searchCarDto.getLocationId());
     }

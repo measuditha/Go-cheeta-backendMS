@@ -25,7 +25,6 @@ public class DriverService {
     public Driver getDriver(String driverId) {
         return driverRepository.findById(driverId).get();
     }
-
     @Transactional
     public void updateDriver(DriverDto driverDto) {
         Driver driver = getDriver(driverDto);
@@ -36,7 +35,6 @@ public class DriverService {
             locationRepository.save(location);
         }
     }
-
     private Location getLocation(LocationDto dto) {
         Location location = new Location();
         location.setCarRegistrationNo(dto.getCarId());
@@ -50,8 +48,6 @@ public class DriverService {
 
         return location;
     }
-
-
     private Driver getDriver(DriverDto driverDto) {
         Driver driver = new Driver();
         driver.setContactNo(driverDto.getContactNo());

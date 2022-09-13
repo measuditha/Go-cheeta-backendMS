@@ -3,20 +3,13 @@ package com.carbooking.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.carbooking.repo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.carbooking.model.LocationDto;
 import com.carbooking.model.RegisterDto;
-import com.carbooking.repo.Customer;
-import com.carbooking.repo.CustomerRepository;
-import com.carbooking.repo.Driver;
-import com.carbooking.repo.DriverRepository;
-import com.carbooking.repo.Location;
-import com.carbooking.repo.LocationRepository;
-import com.carbooking.repo.Register;
-import com.carbooking.repo.RegisterRepository;
 
 @Component
 public class RegisterService {
@@ -38,6 +31,7 @@ public class RegisterService {
     	System.out.println("dto" + dto);
         Register register = getRegister(dto);
         Customer customer = getCustomer(dto);
+        Admin admin = getAdmin(dto);
         Driver driver = getDriver(dto);
 
         Register registerResponse = registerRepository.save(register);
@@ -72,6 +66,22 @@ public class RegisterService {
             driver.setName(dto.getDriverDto().getName());
             //driver.setOutletAddress(getDriverLocations(dto.getDriverDto().getOutletLocationDto()));
             return driver;
+        }
+        return null;
+    }
+
+    private Admin getAdmin(RegisterDto dto) {
+        if(dto.getAdminDto().getName() == null) {
+            return  null;
+        }
+        if(dto.getAdminDto() != null) {
+            Admin admin = new Admin();
+            admin.setContactNo(dto.getAdminDto().getContactNo());
+            admin.setAdminId(dto.getAdminDto().getAdminId());
+            admin.setEmailAddress(dto.getAdminDto().getEmailAddress());
+            admin.setName(dto.getAdminDto().getName());
+            //admin.setOutletAddress(getAdminLocations(dto.getAdminDto().getOutletLocationDto()));
+            return admin;
         }
         return null;
     }

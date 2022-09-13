@@ -11,16 +11,11 @@ import com.carbooking.repo.CarRepository;
 
 @Component
 public class CarService {
-
     @Autowired
     private CarRepository carRepository;
-
     public Car addCar(CarDto carDto){
         return carRepository.save(getCar(carDto));
-
     }
-
-
     private Car getCar(CarDto carDto) {
 
         Car car = new Car();
@@ -34,7 +29,6 @@ public class CarService {
         //car.setLocation(getLocation(carDto));
         return car;
     }
-    
     private Car getCarWithId(CarDto carDto) {
 
         Car car = new Car();
@@ -48,18 +42,6 @@ public class CarService {
         //car.setLocation(getLocation(carDto));
         return car;
     }
-
-    /*private Location getLocation(CarDto carDto){
-        Location location = new Location();
-        LocationDto locationDto = carDto.getLocation();
-        location.setCity(locationDto.getCity());
-        location.setCountry(locationDto.getCountry());
-        location.setFlatNo(locationDto.getFlatNo());
-        location.setPinCode(locationDto.getPinCode());
-        location.setStreet(locationDto.getStreet());
-        return location;
-    }*/
-
     public Car getCar(String registrationNo) {
         return carRepository.findByRegistrationNo(registrationNo);
     }
@@ -67,18 +49,12 @@ public class CarService {
     public List<Car> getAllCar() {
         return (List<Car>) carRepository.findAll();
     }
-
-
 	public List<Car> getAllCarByDriverId(String driverId) {
 		return carRepository.findByDriverId(driverId);
 	}
-
-
 	public void updateCar(CarDto carDto) {
 		carRepository.save(getCar(carDto));
 	}
-
-
 	public void deleteCar(String registrationNo) {
 		carRepository.deleteById(registrationNo);
 	}

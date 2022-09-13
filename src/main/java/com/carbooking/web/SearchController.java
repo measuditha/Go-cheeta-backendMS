@@ -15,7 +15,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/search")
 public class SearchController {
-
     @Autowired
     private SearchCarService searchCarService;
 

@@ -10,15 +10,11 @@ import java.util.List;
 
 @Service
 public class LocationService {
-
     @Autowired
     private LocationRepository locationRepository;
-
-
     public List<Location> getAllLocations() {
         return (List<Location>) locationRepository.findAll();
     }
-
     public List<Location> getLocationsByDriverId(String driverId) {
         return locationRepository.findAllByDriverId(driverId);
     }

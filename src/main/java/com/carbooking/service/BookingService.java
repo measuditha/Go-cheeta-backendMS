@@ -11,24 +11,19 @@ import com.carbooking.repo.BookingRepository;
 
 @Service
 public class BookingService {
-
     @Autowired
     private BookingRepository bookingRepository;
-
     public void confirmBooking(BookingDto bookingDto) {
         Booking booking = getBooking(bookingDto);
         bookingRepository.save(booking);
     }
-    
     public List<Booking> getCustomerBooking(String custId) {
     	return bookingRepository.findAllByCustomerId(custId);
     }
-
     public List<Booking> getDriverBooking(String driverId) {
     	
     	return bookingRepository.findAllByDriverId(driverId);
     }
-
     public Booking getBooking(BookingDto bookingDto){
         Booking booking = new Booking();
         booking.setCarId(bookingDto.getCarId());

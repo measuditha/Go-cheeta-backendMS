@@ -10,13 +10,10 @@ import com.carbooking.repo.RegisterRepository;
 
 @Service
 public class LoginService {
-
     @Autowired
     private RegisterRepository registerRepository;
-
     public LoginResponse checkLogin(LoginDto dto) {
         Register register = registerRepository.findByUsername(dto.getUsername());
         return new LoginResponse(register.getUsername(), register.getUserType());
-        
     }
 }
